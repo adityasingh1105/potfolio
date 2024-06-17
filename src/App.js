@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./Navbar/Navbar";
+import HomeMenu from "./Homemenu/HomeMenu";
+import FAQ from "./FAQ/FAQ";
 
 class App extends React.Component {
   constructor(props) {
@@ -60,6 +62,8 @@ class App extends React.Component {
           <div className="cursor" ref={this.cursor} />
           <div className="cursor" ref={this.cursorTrailing} />
           <Navbar />
+          <HomeMenu />
+          <FAQ />
         </div>
       </div>
     );
