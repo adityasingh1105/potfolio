@@ -1,4 +1,4 @@
-import { Box, Button, Drawer, IconButton, styled } from "@mui/material";
+import { Box, Button, Drawer, styled } from "@mui/material";
 import React, { useState } from "react";
 import { Images } from "../ConstantData";
 import { textValue } from "../ConstantText";
@@ -7,7 +7,6 @@ import BusinessIcon from "@mui/icons-material/Business";
 import BuildIcon from "@mui/icons-material/Build";
 import ArticleIcon from "@mui/icons-material/Article";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
-import MenuIcon from "@mui/icons-material/Menu";
 import "./HamburgerIcon.css";
 
 export default function Navbar() {
@@ -111,22 +110,15 @@ const StyledMainBox = styled(Box)({
     color: "#ffffff",
     border: "0px solid #3366FF",
     textTransform: "unset",
-    transition: "background-color 1s ease",
     padding: "10px 20px",
     "&:hover": {
       backgroundColor: "#294d99",
       boxShadow: "0 10px 20px 0 rgba(51, 102, 255, 0.4)",
       transform: "translateY(-1px)",
     },
-
     transition: "background-color 0.3s ease",
     fontSize: "16px",
     fontWeight: 700,
-    "&:hover": {
-      backgroundColor: "#294d99",
-      boxShadow: "0 10px 20px 0 rgba(51, 102, 255, 0.4)",
-      transform: "translateY(-1px)",
-    },
     "@media screen and (max-width: 600px)": {
       padding: "10px 20px",
       fontSize: "14px",

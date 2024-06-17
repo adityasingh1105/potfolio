@@ -9,12 +9,12 @@ import Slider from "react-slick";
 import { Images } from "../ConstantData";
 
 const HomeMenu = () => {
-  const [sliderData, setSliderData] = useState([
+  const [sliderData] = useState([
     { id: 1, logo: Images.logoOne },
     { id: 2, logo: Images.logoTwo },
     { id: 3, logo: Images.logoThree },
     { id: 4, logo: Images.logoFour },
-    { id: 5, logo: Images.logoOne }, // Adjusted IDs to be unique
+    { id: 5, logo: Images.logoOne }, 
     { id: 6, logo: Images.logoTwo },
     { id: 7, logo: Images.logoThree },
     { id: 8, logo: Images.logoFour },

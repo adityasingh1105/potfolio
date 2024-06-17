@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./Navbar/Navbar";
 import HomeMenu from "./Homemenu/HomeMenu";
 import FAQ from "./FAQ/FAQ";
+import Footer from "./Footer/Footer";
 
 class App extends React.Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class App extends React.Component {
           <Navbar />
           <HomeMenu />
           <FAQ />
+          <Footer />
         </div>
       </div>
     );
