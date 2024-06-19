@@ -4,6 +4,9 @@ import Navbar from "./Navbar/Navbar";
 import HomeMenu from "./Homemenu/HomeMenu";
 import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer";
+import { ThemeProvider } from "styled-components";
+import { createTheme } from "@mui/material/styles";
+import ScrollToTopButton from "./ScrollToTopButton"; // Import ScrollToTopButton component
 
 class App extends React.Component {
   constructor(props) {
@@ -41,14 +44,13 @@ class App extends React.Component {
     const { mouseX, mouseY, trailingX, trailingY } = this.state;
     const diffX = mouseX - trailingX;
     const diffY = mouseY - trailingY;
-    // Number in expression is coefficient of the delay. 10 for example. You can play with it.
     this.setState(
       {
         trailingX: trailingX + diffX / 10,
         trailingY: trailingY + diffY / 10,
       },
       () => {
-        // Using refs and transform for better performance.
+
         this.cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
         this.cursorTrailing.current.style.transform = `translate3d(${trailingX}px, ${trailingY}px, 0)`;
         this.animationFrame = requestAnimationFrame(this.moveCursor);
@@ -58,16 +60,19 @@ class App extends React.Component {
 
   render = () => {
     return (
-      <div className="container">
-        <div className="cursors">
-          <div className="cursor" ref={this.cursor} />
-          <div className="cursor" ref={this.cursorTrailing} />
-          <Navbar />
-          <HomeMenu />
-          <FAQ />
-          <Footer />
+      <ThemeProvider theme={createTheme}>
+        <div className="container">
+          <div className="cursors">
+            <div className="cursor" ref={this.cursor} />
+            <div className="cursor" ref={this.cursorTrailing} />
+            <Navbar />
+            <HomeMenu />
+            <FAQ />
+            <Footer />
+            <ScrollToTopButton /> {/* Include ScrollToTopButton component */}
+          </div>
         </div>
-      </div>
+      </ThemeProvider>
     );
   };
 }

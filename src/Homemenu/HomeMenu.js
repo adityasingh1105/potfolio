@@ -14,7 +14,7 @@ const HomeMenu = () => {
     { id: 2, logo: Images.logoTwo },
     { id: 3, logo: Images.logoThree },
     { id: 4, logo: Images.logoFour },
-    { id: 5, logo: Images.logoOne }, 
+    { id: 5, logo: Images.logoOne },
     { id: 6, logo: Images.logoTwo },
     { id: 7, logo: Images.logoThree },
     { id: 8, logo: Images.logoFour },
@@ -32,20 +32,12 @@ const HomeMenu = () => {
           </Typography>
         </EngageBox>
 
-        <Typography
-          fontFamily="syne, Sans-serif"
-          fontSize="45px"
-          fontWeight={700}
-          color="#191d28"
-          width="650px"
-        >
-          {textValue.mainHeading}
-        </Typography>
+        <Typography className="headignTxt">{textValue.mainHeading}</Typography>
         <Typography
           fontSize="17px"
           color="#5d6374"
           fontWeight={400}
-          width="550px"
+          maxWidth="550px"
           fontFamily="Roboto"
         >
           {textValue.subHeading}
@@ -119,7 +111,7 @@ const AnimatedBox = styled(Box)`
 
 const EngageBox = styled(Box)({
   width: "270px",
-  height: "20px",
+  height: "auto",
   backgroundColor: "#FFE484",
   borderRadius: "8px",
   display: "flex",
@@ -127,6 +119,10 @@ const EngageBox = styled(Box)({
   alignItems: "center",
   padding: "10px 20px",
   gap: "10px",
+  "@media screen and (max-width: 600px)": {
+    width: "100%",
+    fontSize: "14px",
+  },
 });
 
 const HomeBox = styled(Box)({
@@ -142,6 +138,23 @@ const HomeBox = styled(Box)({
     gap: "20px",
     cursor: "pointer",
     flexShrink: 0,
+    marginTop: "20px",
+  },
+  "& .headignTxt": {
+    fontFamily: "syne, Sans-serif",
+    fontSize: "45px",
+    fontWeight: 700,
+    color: "#191d28",
+    maxWidth: "650px",
+    "@media screen and (max-width: 800px)": {
+      fontSize: "36px", // Adjust font size for smaller screens
+    },
+    "@media screen and (max-width: 600px)": {
+      fontSize: "30px", // Further adjust font size for smaller screens
+    },
+    "@media screen and (max-width: 400px)": {
+      fontSize: "24px", // Adjust font size for very small screens
+    },
   },
   "& .startFreeButton": {
     backgroundColor: "#3366FF",
@@ -159,14 +172,27 @@ const HomeBox = styled(Box)({
       transform: "translateY(-1px)",
     },
     "@media screen and (max-width: 600px)": {
-      padding: "10px 20px",
+      padding: "8px 15px",
       fontSize: "14px",
     },
     "@media screen and (max-width: 500px)": {
-      padding: "8px 15px",
+      padding: "6px 12px",
       fontSize: "12px",
     },
   },
 });
+
+const SliderBox = styled(Box)(({ theme }) => ({
+  padding: "40px 6vw",
+  [theme.breakpoints.down("md")]: {
+    padding: "30px 5vw",
+  },
+  [theme.breakpoints.down("sm")]: {
+    padding: "20px 4vw",
+  },
+  [theme.breakpoints.down("xs")]: {
+    padding: "10px 3vw",
+  },
+}));
 
 export default HomeMenu;

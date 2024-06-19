@@ -3,13 +3,19 @@ import logoOne from "../src/Assets/logoOne.png";
 import logoTwo from "../src/Assets/logoTwo.png";
 import logoThree from "../src/Assets/logoThree.png";
 import logoFour from "../src/Assets/logoFour.png";
+import sendButton from "../src/Assets/sendButton.png";
+import footerBgImg from "../src/Assets/footerBgImg.jpeg";
+import footerEmojiMan from "../src/Assets/footerEmojiMan.png";
 
 const Images = {
-  logoImg: logoImg,
-  logoOne: logoOne,
-  logoTwo: logoTwo,
-  logoThree: logoThree,
-  logoFour: logoFour,
+  logoImg,
+  logoOne,
+  logoTwo,
+  logoThree,
+  logoFour,
+  footerBgImg,
+  sendButton,
+  footerEmojiMan,
 };
 const accordionData = [
   {

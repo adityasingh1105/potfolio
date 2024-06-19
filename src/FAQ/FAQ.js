@@ -41,7 +41,7 @@ export default function FAQ() {
   );
 }
 
-const AccodianMainBox = styled(Box)({
+const AccodianMainBox = styled(Box)(({ theme }) => ({
   padding: "0px 15vw",
   backgroundColor: "#F3F7FD",
   "& .helpTxt": {
@@ -49,7 +49,7 @@ const AccodianMainBox = styled(Box)({
     fontWeight: "bold",
     fontSize: "38px",
     color: "#000",
-    fontFamily: "syne, Sans-serif",
+    fontFamily: "Syne, sans-serif",
     marginBottom: "40px",
   },
   "& .helpDetails": {
@@ -72,9 +72,21 @@ const AccodianMainBox = styled(Box)({
     backgroundColor: "#FFF",
   },
   "& .accordionQuestion": {
-    fontSize: "30px",
-    fontFamily: "syne, Sans-serif",
+    fontFamily: "Syne, sans-serif",
     fontWeight: "bold",
+    fontSize: "24px",
+    [theme.breakpoints.up("sm")]: {
+      fontSize: "28px",
+    },
+    [theme.breakpoints.up("md")]: {
+      fontSize: "30px",
+    },
+    [theme.breakpoints.up("lg")]: {
+      fontSize: "32px",
+    },
+    [theme.breakpoints.up("xl")]: {
+      fontSize: "36px",
+    },
   },
   "& .accordionAnswer": {
     fontSize: "17px",
@@ -83,4 +95,4 @@ const AccodianMainBox = styled(Box)({
   "& .textBox": {
     padding: "30px 0px",
   },
-});
+}));

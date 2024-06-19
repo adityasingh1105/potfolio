@@ -28,3 +28,27 @@
   width: 9px;
 }
 
+
+/* scrollbar.css */
+
+/* WebKit (Safari, Chrome, etc.) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #191D28;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A83FF;
+  /* Thumb color */
+  border-radius: 5px;
+  /* Roundness of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3666DB;
+  /* Thumb color on hover */
+}
