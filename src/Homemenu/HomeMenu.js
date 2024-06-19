@@ -182,17 +182,4 @@ const HomeBox = styled(Box)({
   },
 });
 
-const SliderBox = styled(Box)(({ theme }) => ({
-  padding: "40px 6vw",
-  [theme.breakpoints.down("md")]: {
-    padding: "30px 5vw",
-  },
-  [theme.breakpoints.down("sm")]: {
-    padding: "20px 4vw",
-  },
-  [theme.breakpoints.down("xs")]: {
-    padding: "10px 3vw",
-  },
-}));
-
 export default HomeMenu;
