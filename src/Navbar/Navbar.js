@@ -8,6 +8,8 @@ import BuildIcon from "@mui/icons-material/Build";
 import ArticleIcon from "@mui/icons-material/Article";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import "./HamburgerIcon.css";
+import { Link } from "react-router-dom";
+import Cursor from "../Contact/Cursor";
 
 export default function Navbar() {
   const [drawer, setDrawer] = useState(false);
@@ -30,11 +32,26 @@ export default function Navbar() {
     <StyledMainBox>
       <img src={Images.logoImg} className="logoImage" alt={textValue.logoAlt} />
       <Box className="navButtonsContainer">
-        <StyledNavButton startIcon={<HomeIcon />}>Home</StyledNavButton>
+        {/* <StyledNavButton startIcon={<HomeIcon />}>Home</StyledNavButton> */}
+        <StyledNavButton
+          component={Link}
+          to="/"
+          startIcon={<ContactMailIcon />}
+        >
+          Home
+        </StyledNavButton>
+
         <StyledNavButton startIcon={<BusinessIcon />}>Company</StyledNavButton>
         <StyledNavButton startIcon={<BuildIcon />}>Projects</StyledNavButton>
         <StyledNavButton startIcon={<ArticleIcon />}>Blog</StyledNavButton>
-        <StyledNavButton startIcon={<ContactMailIcon />}>
+        {/* <StyledNavButton startIcon={<ContactMailIcon />}>
+          Contact
+        </StyledNavButton> */}
+        <StyledNavButton
+          component={Link}
+          to="/Cursor"
+          startIcon={<ContactMailIcon />}
+        >
           Contact
         </StyledNavButton>
       </Box>
