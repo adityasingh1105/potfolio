@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Navbar/Navbar";
 import HomeMenu from "./Homemenu/HomeMenu";
@@ -50,7 +51,6 @@ class App extends React.Component {
         trailingY: trailingY + diffY / 10,
       },
       () => {
-
         this.cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
         this.cursorTrailing.current.style.transform = `translate3d(${trailingX}px, ${trailingY}px, 0)`;
         this.animationFrame = requestAnimationFrame(this.moveCursor);
@@ -61,20 +61,29 @@ class App extends React.Component {
   render = () => {
     return (
       <ThemeProvider theme={createTheme}>
-        <div className="container">
-          <div className="cursors">
-            <div className="cursor" ref={this.cursor} />
-            <div className="cursor" ref={this.cursorTrailing} />
-            <Navbar />
-            <HomeMenu />
-            <FAQ />
-            <Footer />
-            <ScrollToTopButton /> {/* Include ScrollToTopButton component */}
+        <Router>
+          <div className="container">
+            <div className="cursors">
+              <div className="cursor" ref={this.cursor} />
+              <div className="cursor" ref={this.cursorTrailing} />
+              <Navbar />
+
+              <Routes>
+                <Route path="/" element={
+                  <>
+                  <HomeMenu />
+                  <FAQ/>
+                  </>
+              } />
+              </Routes>
+              <Footer />
+              <ScrollToTopButton />
+            </div>
           </div>
-        </div>
+        </Router>
       </ThemeProvider>
     );
-  };
+  }
 }
 
 export default App;
