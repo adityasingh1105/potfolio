@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./Navbar/Navbar";
-import HomeMenu from "./Homemenu/HomeMenu";
-import FAQ from "./FAQ/FAQ";
+// import Navbar from "./Navbar/Navbar";
+// import HomeMenu from "./Homemenu/HomeMenu";
+// import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer";
 import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/material/styles";
 import ScrollToTopButton from "./ScrollToTopButton"; // Import ScrollToTopButton component
+import ContactBlock from "./ContactBlock/Contact";
 
 class App extends React.Component {
   constructor(props) {
@@ -50,7 +51,6 @@ class App extends React.Component {
         trailingY: trailingY + diffY / 10,
       },
       () => {
-
         this.cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
         this.cursorTrailing.current.style.transform = `translate3d(${trailingX}px, ${trailingY}px, 0)`;
         this.animationFrame = requestAnimationFrame(this.moveCursor);
@@ -65,9 +65,10 @@ class App extends React.Component {
           <div className="cursors">
             <div className="cursor" ref={this.cursor} />
             <div className="cursor" ref={this.cursorTrailing} />
-            <Navbar />
+            {/* <Navbar />
             <HomeMenu />
-            <FAQ />
+            <FAQ /> */}
+            <ContactBlock />
             <Footer />
             <ScrollToTopButton /> {/* Include ScrollToTopButton component */}
           </div>
