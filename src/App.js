@@ -8,6 +8,7 @@ import Footer from "./Footer/Footer";
 import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/material/styles";
 import ScrollToTopButton from "./ScrollToTopButton"; // Import ScrollToTopButton component
+import ContactBlock from "./ContactBlock/Contact";
 
 class App extends React.Component {
   constructor(props) {
@@ -75,6 +76,10 @@ class App extends React.Component {
                   <FAQ/>
                   </>
               } />
+              <Route path ="/contact" element={
+            <ContactBlock />
+            
+              }/>
               </Routes>
               <Footer />
               <ScrollToTopButton />
