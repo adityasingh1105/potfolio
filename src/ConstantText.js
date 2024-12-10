@@ -21,4 +21,9 @@ export const textValue = {
   updates: "Get the latest updates and offers for business services yearly.",
   placeholder: "Your Email Address",
   buttonText: "Send",
+  textHeader: "Get In Touch",
+  subTitle:
+    "Our success in creating business solutions is due in large part to",
+  subTitleNext: "our talented and highly committed team.",
+  textHeaderNext: "Fill Up The Form",
 };
