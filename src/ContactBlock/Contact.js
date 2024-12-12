@@ -3,6 +3,8 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailIcon from "@mui/icons-material/Mail";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 import Navbar from "../Navbar/Navbar";
+import image from "../Assets/gradiant-bg-2.jpg";
+import image1 from "../Assets/globe-dark.png";
 import {
   Box,
   Button,
@@ -11,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import styled from "@emotion/styled";
+import { textValue } from "../ConstantText";
 
 class Home extends Component {
   render() {
@@ -18,10 +21,11 @@ class Home extends Component {
       <Mainbox>
         <Navbar />
         <Box className="container">
+          <img src={image1} alt="Globe" className="rotated" />
           <Box className="container-wraper">
             <Box>
               <Typography className="text" variant="h2">
-                Get In Touch
+                {textValue.textHeader}
               </Typography>
 
               <Typography
@@ -32,10 +36,9 @@ class Home extends Component {
                   color: "#555",
                 }}
               >
-                Our success in creating business solutions is due in large part
-                to
+                {textValue.subTitle}
                 <br />
-                our talented and highly committed team.
+                {textValue.subTitleNext}
               </Typography>
             </Box>
             <Box className="papar">
@@ -86,7 +89,7 @@ class Home extends Component {
           <Box className="middile">
             <Box>
               <Typography className="textarea" variant="h2">
-                Fill Up The Form
+                {textValue.textHeaderNext}
               </Typography>
 
               <Typography
@@ -97,10 +100,9 @@ class Home extends Component {
                   color: "#555",
                 }}
               >
-                Our success in creating business solutions is due in large part
-                to our
+                {textValue.subTitle}
                 <br />
-                talented and highly committed team.
+                {textValue.subTitleNext}
               </Typography>
             </Box>
             <Box>
@@ -164,18 +166,6 @@ class Home extends Component {
             </Box>
           </Box>
         </Box>
-        <Box className="parent-item">
-          <Box className="parent-item-one">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d18836612.44698299!2d65.293875!3d71.432342!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slastminute.com%20London%20Eye!5e1!3m2!1sen!2sus!4v1733248888053!5m2!1sen!2sus"
-              width="1520"
-              height="350"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </Box>
-        </Box>
       </Mainbox>
     );
   }
@@ -189,12 +179,35 @@ const Mainbox = styled(Box)({
     justifyContent: "center",
     alignContent: "center",
     padding: "10px",
-    margin: "100px",
+    margin: "0px",
+    backgroundColor: "white",
+    backgroundImage: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
   "& .container-wraper": {
-    backgroundColor: "",
     height: "80vh",
     width: "100vh",
+    margin: "50px 1px 0px 130px",
+  },
+
+  "@keyframes glob": {
+    "0%": {
+      transform: "translate(-50%, -50%) rotate(0deg)",
+    },
+    "100%": {
+      transform: "translate(-50%, -50%) rotate(360deg)",
+    },
+  },
+
+  "& .rotated": {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    height: "600px",
+    width: "600px",
+    animation: "glob 50s linear infinite",
   },
   "& .papar": {
     display: "flex",
@@ -247,16 +260,17 @@ const Mainbox = styled(Box)({
     alignItems: "center",
   },
   "& .middile": {
-    backgroundColor: "",
     height: "80vh",
     width: "100vh",
+    margin: "50px 10px 0px 1px",
   },
   "& .text": {
     fontWeight: "bold",
     marginBottom: "1rem",
     color: "#333",
-    fontSize: "28px",
+    fontSize: "32px",
     lineHeight: "36px",
+    fontFamily: "var(--softgen-primary-font)",
   },
   "& .textarea": {
     fontWeight: "bold",
@@ -282,7 +296,7 @@ const Mainbox = styled(Box)({
     },
   },
   "& .holdervalue": {
-    width: "92.5%",
+    width: "88%",
     height: "",
     padding: "10px",
     fontSize: "16px",
