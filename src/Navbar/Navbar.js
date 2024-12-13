@@ -8,12 +8,18 @@ import BuildIcon from "@mui/icons-material/Build";
 import ArticleIcon from "@mui/icons-material/Article";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 import "./HamburgerIcon.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [drawer, setDrawer] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = () => {
     setDrawer(!drawer);
+  };
+
+  const handleNavigate = (screenName) => {
+    navigate(screenName);
   };
 
   const HamburgerIcon = () => {
@@ -30,11 +36,34 @@ export default function Navbar() {
     <StyledMainBox>
       <img src={Images.logoImg} className="logoImage" alt={textValue.logoAlt} />
       <Box className="navButtonsContainer">
-        <StyledNavButton startIcon={<HomeIcon />}>Home</StyledNavButton>
-        <StyledNavButton startIcon={<BusinessIcon />}>Company</StyledNavButton>
-        <StyledNavButton startIcon={<BuildIcon />}>Projects</StyledNavButton>
-        <StyledNavButton startIcon={<ArticleIcon />}>Blog</StyledNavButton>
-        <StyledNavButton startIcon={<ContactMailIcon />}>
+        <StyledNavButton
+          onClick={() => handleNavigate("/")}
+          startIcon={<HomeIcon />}
+        >
+          Home
+        </StyledNavButton>
+        <StyledNavButton
+          onClick={() => handleNavigate("/company")}
+          startIcon={<BusinessIcon />}
+        >
+          Company
+        </StyledNavButton>
+        <StyledNavButton
+          onClick={() => handleNavigate("/projects")}
+          startIcon={<BuildIcon />}
+        >
+          Projects
+        </StyledNavButton>
+        <StyledNavButton
+          onClick={() => handleNavigate("/blog")}
+          startIcon={<ArticleIcon />}
+        >
+          Blog
+        </StyledNavButton>
+        <StyledNavButton
+          onClick={() => handleNavigate("/contact")}
+          startIcon={<ContactMailIcon />}
+        >
           Contact
         </StyledNavButton>
       </Box>
@@ -44,27 +73,33 @@ export default function Navbar() {
       </Box>
       <Drawer anchor="right" open={drawer} onClose={toggleDrawer}>
         <StyledDrawerBox>
-          <StyledDrawerButton startIcon={<HomeIcon />} onClick={toggleDrawer}>
+          <StyledDrawerButton
+            startIcon={<HomeIcon />}
+            onClick={() => handleNavigate("/")}
+          >
             Home
           </StyledDrawerButton>
           <StyledDrawerButton
             startIcon={<BusinessIcon />}
-            onClick={toggleDrawer}
+            onClick={() => handleNavigate("/company")}
           >
             Company
           </StyledDrawerButton>
-          <StyledDrawerButton startIcon={<BuildIcon />} onClick={toggleDrawer}>
+          <StyledDrawerButton
+            startIcon={<BuildIcon />}
+            onClick={() => handleNavigate("/projects")}
+          >
             Projects
           </StyledDrawerButton>
           <StyledDrawerButton
             startIcon={<ArticleIcon />}
-            onClick={toggleDrawer}
+            onClick={() => handleNavigate("/blog")}
           >
             Blog
           </StyledDrawerButton>
           <StyledDrawerButton
             startIcon={<ContactMailIcon />}
-            onClick={toggleDrawer}
+            onClick={() => handleNavigate("/contact")}
           >
             Contact
           </StyledDrawerButton>
