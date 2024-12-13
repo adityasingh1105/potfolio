@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Images } from "../ConstantData";
+import FutureStrategy from "../FutureStrategy/FutureStrategy"
 
 const HomeMenu = () => {
   const [sliderData] = useState([
@@ -71,7 +72,7 @@ const HomeMenu = () => {
           {sliderData.map(
             (
               item,
-              index // Added unique key prop
+              index
             ) => (
               <img key={index} src={item.logo} alt={`logo-${item.id}`} />
             )
@@ -85,6 +86,7 @@ const HomeMenu = () => {
     <Fragment>
       {renderHomeBox()}
       {renderSlider()}
+      {FutureStrategy() }
     </Fragment>
   );
 };
