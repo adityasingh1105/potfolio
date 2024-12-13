@@ -2,24 +2,16 @@ import React, { Component } from "react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailIcon from "@mui/icons-material/Mail";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
-import Navbar from "../Navbar/Navbar";
 import image from "../Assets/gradiant-bg-2.jpg";
 import image1 from "../Assets/globe-dark.png";
-import {
-  Box,
-  Button,
-  TextareaAutosize,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { textValue } from "../ConstantText";
-
+import ContactForm from "../ContactBlock/ContactForm";
 class Home extends Component {
   render() {
     return (
       <Mainbox>
-        <Navbar />
         <Box className="container">
           <img src={image1} alt="Globe" className="rotated" />
           <Box className="container-wraper">
@@ -44,7 +36,7 @@ class Home extends Component {
             <Box className="papar">
               <LocationOnIcon className="paper-wraper" />
               <Box>
-                <h3 style={{ margin: 0 }}>
+                <h3 style={{ margin: "40px 0px 0px 10px" }}>
                   962 Fifth Avenue,
                   <br />
                   New York, NY10022
@@ -54,14 +46,16 @@ class Home extends Component {
             <Box className="size">
               <MailIcon
                 style={{
-                  marginRight: "8px",
-                  height: "100px",
+                  margin: "40px 10px 0px 0px",
+                  height: "50px",
                   width: "50px",
-                  backgroundColor: "#4FF8BFF",
+                  backgroundColor: "#5FAAFF",
+                  color: "white",
+                  borderRadius: "2px 2px 2px 2px",
                 }}
               />
               <Box>
-                <h3 style={{ margin: 0 }}>
+                <h3 style={{ margin: "40px 0px 0px 10px" }}>
                   hello@themaster.net,
                   <br />
                   yourmail@gmail.com
@@ -71,14 +65,16 @@ class Home extends Component {
             <Box className="item">
               <WifiCalling3Icon
                 style={{
-                  marginRight: "8px",
-                  height: "100px",
+                  margin: " 40px 10px 0px 0px ",
+                  height: "50px",
                   width: "50px",
-                  backgroundColor: "#4FF8BFF",
+                  backgroundColor: "#5FAAFF",
+                  color: "white",
+                  borderRadius: "2px 2px 2px 2px",
                 }}
               />
               <Box>
-                <h3 style={{ margin: 0 }}>
+                <h3 style={{ margin: "40px 0px 0px 10px" }}>
                   (+123) 456 789 101
                   <br />
                   +1-302-123-456
@@ -106,63 +102,7 @@ class Home extends Component {
               </Typography>
             </Box>
             <Box>
-              <Box className="size-value">
-                <TextField
-                  className="textfiled-area"
-                  placeholder="First Name"
-                  size="medium"
-                  inputProps={{ maxLength: 400 }}
-                  sx={{
-                    width: "290px",
-                  }}
-                />
-
-                <TextField
-                  className="textfiled-area"
-                  placeholder="Last Name"
-                  size="medium"
-                  inputProps={{ maxLength: 400 }}
-                />
-              </Box>
-              <Box className="Sizepaper">
-                <TextField
-                  className="textfiled-area"
-                  placeholder="Email"
-                  size="medium"
-                  inputProps={{ maxLength: 400 }}
-                  sx={{
-                    width: "290px",
-                  }}
-                />
-
-                <TextField
-                  className="textfiled-area"
-                  placeholder="Phone"
-                  size="medium"
-                  inputProps={{ maxLength: 400 }}
-                />
-              </Box>
-              <TextareaAutosize
-                className="holdervalue"
-                placeholder="Message"
-                minRows={6}
-                inputProps={{
-                  style: {
-                    color: "black",
-                    "::placeholder": {
-                      color: "#888",
-                      opacity: 1,
-                    },
-                  },
-                }}
-              />
-              <Button
-                className="submit-btn"
-                variant="contained"
-                color="primary"
-              >
-                Send Message
-              </Button>
+              <ContactForm />
             </Box>
           </Box>
         </Box>
@@ -213,11 +153,18 @@ const Mainbox = styled(Box)({
     display: "flex",
     alignItems: "center",
   },
+
   "& .paper-wraper": {
-    marginRight: "8px",
-    height: "100px",
+    margin: "40px 10px 0px 0px",
+    height: "50px",
     width: "50px",
-    backgroundColor: "#4FF8BFF",
+    backgroundColor: "#5FAAFF",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "2px 2px 2px 2px",
+    fontSize: "20px",
+    color: "white",
   },
   "& .size": {
     display: "flex",
@@ -297,15 +244,12 @@ const Mainbox = styled(Box)({
   },
   "& .holdervalue": {
     width: "88%",
-    height: "",
-    padding: "10px",
     fontSize: "16px",
     borderRadius: "4px",
     border: "1px solid #ccc",
     boxSizing: "border-box",
-    resize: "none",
     marginTop: "20px",
-    outline: "none",
+    pointerEvents: "auto",
   },
   "& .submit-btn": {
     backgroundColor: "#1976d2",
@@ -314,5 +258,6 @@ const Mainbox = styled(Box)({
     fontSize: "11px",
     borderRadius: "4px",
     marginTop: "20px",
+    textTransform: "none",
   },
 });

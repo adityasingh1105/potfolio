@@ -1,9 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-// import Navbar from "./Navbar/Navbar";
-// import HomeMenu from "./Homemenu/HomeMenu";
-// import FAQ from "./FAQ/FAQ";
+import Navbar from "./Navbar/Navbar";
+import HomeMenu from "./Homemenu/HomeMenu";
+import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer";
 import { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/material/styles";
@@ -70,17 +70,18 @@ class App extends React.Component {
               <Navbar />
 
               <Routes>
-                <Route path="/" element={
-                  <>
-                  <HomeMenu />
-                  <FAQ/>
-                  </>
-              } />
-              <Route path ="/contact" element={
-            <ContactBlock />
-            
-              }/>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <HomeMenu />
+                      <FAQ />
+                    </>
+                  }
+                />
+                <Route path="/contact" element={<ContactBlock />} />
               </Routes>
+
               <Footer />
               <ScrollToTopButton />
             </div>
@@ -88,7 +89,7 @@ class App extends React.Component {
         </Router>
       </ThemeProvider>
     );
-  }
+  };
 }
 
 export default App;
