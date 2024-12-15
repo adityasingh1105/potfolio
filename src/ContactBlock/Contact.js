@@ -16,90 +16,73 @@ class Home extends Component {
           <img src={image1} alt="Globe" className="rotated" />
           <Box className="container-wraper">
             <Box>
-              <Typography className="text" variant="h2">
-                {textValue.textHeader}
-              </Typography>
-
-              <Typography
-                variant="body1"
-                sx={{
-                  fontSize: "1.1rem",
-                  lineHeight: 1.6,
-                  color: "#555",
-                }}
-              >
-                {textValue.subTitle}
-                <br />
-                {textValue.subTitleNext}
-              </Typography>
+              <Typography className="text">{textValue.textHeader}</Typography>
+              <Box>
+                <Typography className="subText">
+                  {textValue.subTitle}
+                </Typography>
+                <Typography className="subText">
+                  {textValue.subTitleNext}
+                </Typography>
+              </Box>
             </Box>
             <Box className="papar">
-              <LocationOnIcon className="paper-wraper" />
-              <Box>
-                <h3 style={{ margin: "40px 0px 0px 10px" }}>
-                  962 Fifth Avenue,
-                  <br />
-                  New York, NY10022
-                </h3>
+              <LocationOnIcon className="iconLocation" />
+              <Box className="perenttext">
+                <Box>
+                  <Typography className="typeValue">
+                    962 Fifth Avenue,
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography className="typeValue">
+                    New York, NY10022
+                  </Typography>
+                </Box>
               </Box>
             </Box>
             <Box className="size">
-              <MailIcon
-                style={{
-                  margin: "40px 10px 0px 0px",
-                  height: "50px",
-                  width: "50px",
-                  backgroundColor: "#5FAAFF",
-                  color: "white",
-                  borderRadius: "2px 2px 2px 2px",
-                }}
-              />
-              <Box>
-                <h3 style={{ margin: "40px 0px 0px 10px" }}>
-                  hello@themaster.net,
-                  <br />
-                  yourmail@gmail.com
-                </h3>
+              <MailIcon className="iconMailWifi" />
+              <Box className="perenttext">
+                <Box>
+                  <Typography className="typeValue">
+                    hello@themaster.net,
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography className="typeValue">
+                    yourmail@gmail.com
+                  </Typography>
+                </Box>
               </Box>
             </Box>
             <Box className="item">
-              <WifiCalling3Icon
-                style={{
-                  margin: " 40px 10px 0px 0px ",
-                  height: "50px",
-                  width: "50px",
-                  backgroundColor: "#5FAAFF",
-                  color: "white",
-                  borderRadius: "2px 2px 2px 2px",
-                }}
-              />
-              <Box>
-                <h3 style={{ margin: "40px 0px 0px 10px" }}>
-                  (+123) 456 789 101
-                  <br />
-                  +1-302-123-456
-                </h3>
+              <WifiCalling3Icon className="iconMailWifi" />
+              <Box className="perenttext">
+                <Box>
+                  <Typography className="typeValue">
+                    (+123) 456 789 101
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography className="typeValue">+1-302-123-456</Typography>
+                </Box>
               </Box>
             </Box>
           </Box>
           <Box className="middile">
             <Box>
-              <Typography className="textarea" variant="h2">
+              <Typography className="textarea">
                 {textValue.textHeaderNext}
               </Typography>
-
-              <Typography
-                variant="body1"
-                sx={{
-                  fontSize: "1.1rem",
-                  lineHeight: 1.6,
-                  color: "#555",
-                }}
-              >
-                {textValue.subTitle}
-                <br />
-                {textValue.subTitleNext}
-              </Typography>
+              <Box>
+                <Typography className="subText">
+                  {textValue.subTitle}
+                </Typography>
+                <Typography className="subText">
+                  {textValue.subTitleNext}
+                </Typography>
+              </Box>
             </Box>
             <Box>
               <ContactForm />
@@ -154,7 +137,7 @@ const Mainbox = styled(Box)({
     alignItems: "center",
   },
 
-  "& .paper-wraper": {
+  "& .iconLocation": {
     margin: "40px 10px 0px 0px",
     height: "50px",
     width: "50px",
@@ -215,16 +198,19 @@ const Mainbox = styled(Box)({
     fontWeight: "bold",
     marginBottom: "1rem",
     color: "#333",
-    fontSize: "32px",
+    fontSize: "38px",
     lineHeight: "36px",
-    fontFamily: "var(--softgen-primary-font)",
+    fontFamily: " syne, sans-serif",
+    letterSpacing: "-1px",
   },
   "& .textarea": {
     fontWeight: "bold",
     marginBottom: "1rem",
     color: "#333",
-    fontSize: "28px",
+    fontSize: "38px",
     lineHeight: "36px",
+    letterSpacing: "-1px",
+    fontFamily: "syne, sans-serif",
   },
   "& .textfiled-area": {
     width: "290px",
@@ -259,5 +245,27 @@ const Mainbox = styled(Box)({
     borderRadius: "4px",
     marginTop: "20px",
     textTransform: "none",
+  },
+  "& .perenttext": {
+    marginTop: "auto",
+  },
+  "& .typeValue": {
+    fontSize: "18px",
+    fontWeight: "bold",
+    fontFamily: "sans-serif",
+  },
+  "& .iconMailWifi": {
+    margin: "40px 10px 0px 0px",
+    height: "50px",
+    width: "50px",
+    backgroundColor: "#5FAAFF",
+    color: "white",
+    borderRadius: "2px 2px 2px 2px",
+  },
+  "& .subText": {
+    fontSize: "17px",
+    fontFamily: "DM Sans, sans-serif",
+    lineHeight: 1.6,
+    color: "#5D6374",
   },
 });

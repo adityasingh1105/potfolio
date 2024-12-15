@@ -23,7 +23,7 @@ export const textValue = {
   buttonText: "Send",
   textHeader: "Get In Touch",
   subTitle:
-    "Our success in creating business solutions is due in large part to",
-  subTitleNext: "our talented and highly committed team.",
+    "Our success in creating business solutions is due in large part to our",
+  subTitleNext: "talented and highly committed team.",
   textHeaderNext: "Fill Up The Form",
 };
