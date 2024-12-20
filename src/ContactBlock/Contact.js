@@ -4,7 +4,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 import image from "../Assets/gradiant-bg-2.jpg";
 import image1 from "../Assets/globe-dark.png";
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { textValue } from "../ConstantText";
 import ContactForm from "../ContactBlock/ContactForm";
@@ -12,9 +12,17 @@ class Home extends Component {
   render() {
     return (
       <Mainbox>
-        <Box className="container">
+        <Grid container className="container">
           <img src={image1} alt="Globe" className="rotated" />
-          <Box className="container-wraper">
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            md={5}
+            lg={5}
+            xl={5}
+            className="container-wraper"
+          >
             <Box>
               <Typography className="text">{textValue.textHeader}</Typography>
               <Box>
@@ -69,8 +77,8 @@ class Home extends Component {
                 </Box>
               </Box>
             </Box>
-          </Box>
-          <Box className="middile">
+          </Grid>
+          <Grid item xs={12} sm={4} md={5} lg={5} xl={5} className="middile">
             <Box>
               <Typography className="textarea">
                 {textValue.textHeaderNext}
@@ -84,11 +92,13 @@ class Home extends Component {
                 </Typography>
               </Box>
             </Box>
-            <Box>
-              <ContactForm />
-            </Box>
-          </Box>
-        </Box>
+            <Grid>
+              <Box>
+                <ContactForm />
+              </Box>
+            </Grid>
+          </Grid>
+        </Grid>
       </Mainbox>
     );
   }
@@ -111,7 +121,6 @@ const Mainbox = styled(Box)({
   "& .container-wraper": {
     height: "80vh",
     width: "100vh",
-    margin: "50px 1px 0px 130px",
   },
 
   "@keyframes glob": {
@@ -124,14 +133,23 @@ const Mainbox = styled(Box)({
   },
 
   "& .rotated": {
+    display: "grid",
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: "600px",
-    width: "600px",
+    height: "80%",
+    width: "auto",
     animation: "glob 50s linear infinite",
+    "@media (max-width: 960px)": {
+      height: "50%",
+    },
+    "@media (max-width: 600px)": {
+      height: "40%",
+      transform: "translate(-50%, -60%)",
+    },
   },
+
   "& .papar": {
     display: "flex",
     alignItems: "center",
@@ -154,11 +172,7 @@ const Mainbox = styled(Box)({
     alignItems: "center",
   },
   "& .size-value": {
-    display: "flex",
-    justifyContent: "start",
-    alignItems: "center",
-    gap: "20px",
-    marginTop: "40px",
+    marginTop: "18px",
   },
   "& .Sizepaper": {
     display: "flex",
@@ -190,9 +204,8 @@ const Mainbox = styled(Box)({
     alignItems: "center",
   },
   "& .middile": {
-    height: "80vh",
+    height: "120%",
     width: "100vh",
-    margin: "50px 10px 0px 1px",
   },
   "& .text": {
     fontWeight: "bold",
@@ -213,7 +226,7 @@ const Mainbox = styled(Box)({
     fontFamily: "syne, sans-serif",
   },
   "& .textfiled-area": {
-    width: "290px",
+    width: "95%",
     backgroundColor: "white",
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
@@ -229,7 +242,7 @@ const Mainbox = styled(Box)({
     },
   },
   "& .holdervalue": {
-    width: "88%",
+    width: "98%",
     fontSize: "16px",
     borderRadius: "4px",
     border: "1px solid #ccc",
@@ -245,11 +258,16 @@ const Mainbox = styled(Box)({
     borderRadius: "4px",
     marginTop: "20px",
     textTransform: "none",
+    width: "auto",
   },
   "& .perenttext": {
+    display: "flex",
+    flexWrap: "wrap",
     marginTop: "auto",
   },
   "& .typeValue": {
+    display: "flex",
+    flexWrap: "wrap",
     fontSize: "18px",
     fontWeight: "bold",
     fontFamily: "sans-serif",
