@@ -5,6 +5,7 @@ import {
   Button,
   TextareaAutosize,
   Typography,
+  Grid,
 } from "@mui/material";
 
 class ContactForm extends Component {
@@ -74,8 +75,8 @@ class ContactForm extends Component {
 
     return (
       <Box component="form" onSubmit={this.handleSubmit}>
-        <Box className="size-value">
-          <Box>
+        <Grid container spacing={3} className="size-value">
+          <Grid item xs={12} sm={12} md={6}>
             <TextField
               className="textfiled-area"
               placeholder="First Name"
@@ -83,16 +84,16 @@ class ContactForm extends Component {
               name="firstName"
               value={formData.firstName}
               onChange={this.handleChange}
-              sx={{ width: "290px" }}
+              fullWidth="auto"
             />
             {errors.firstName && (
               <Typography color="error" variant="body2" sx={{ mt: 1 }}>
                 {errors.firstName}
               </Typography>
             )}
-          </Box>
+          </Grid>
 
-          <Box>
+          <Grid item xs={12} sm={12} md={6}>
             <TextField
               className="textfiled-area"
               placeholder="Last Name"
@@ -100,17 +101,15 @@ class ContactForm extends Component {
               name="lastName"
               value={formData.lastName}
               onChange={this.handleChange}
+              fullWidth="auto"
             />
             {errors.lastName && (
               <Typography color="error" variant="body2" sx={{ mt: 1 }}>
                 {errors.lastName}
               </Typography>
             )}
-          </Box>
-        </Box>
-
-        <Box className="Sizepaper">
-          <Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6}>
             <TextField
               className="textfiled-area"
               placeholder="Email"
@@ -118,16 +117,15 @@ class ContactForm extends Component {
               name="email"
               value={formData.email}
               onChange={this.handleChange}
-              sx={{ width: "290px" }}
+              fullWidth
             />
             {errors.email && (
               <Typography color="error" variant="body2" sx={{ mt: 1 }}>
                 {errors.email}
               </Typography>
             )}
-          </Box>
-
-          <Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6}>
             <TextField
               className="textfiled-area"
               placeholder="Phone"
@@ -135,48 +133,50 @@ class ContactForm extends Component {
               name="phone"
               value={formData.phone}
               onChange={this.handleChange}
+              fullWidth
             />
             {errors.phone && (
               <Typography color="error" variant="body2" sx={{ mt: 1 }}>
                 {errors.phone}
               </Typography>
             )}
-          </Box>
-        </Box>
-
-        <Box>
-          <TextareaAutosize
-            className="holdervalue"
-            placeholder="Message"
-            name="message"
-            value={formData.message}
-            onChange={this.handleChange}
-            style={{
-              maxWidth: "90%",
-              color: "black",
-              borderColor: errors.message ? "red" : "inherit",
-              padding: "8px",
-              fontSize: "16px",
-              minHeight: "100px",
-              maxHeight: "500px",
-              overflowY: "auto",
-            }}
-          />
-          {errors.message && (
-            <Typography color="error" variant="body2" sx={{ mt: 1 }}>
-              {errors.message}
-            </Typography>
-          )}
-        </Box>
-
-        <Button
-          className="submit-btn"
-          variant="contained"
-          color="primary"
-          type="submit"
-        >
-          Send Message
-        </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <TextareaAutosize
+              className="holdervalue"
+              placeholder="Message"
+              name="message"
+              value={formData.message}
+              onChange={this.handleChange}
+              style={{
+                maxWidth: "100%",
+                color: "black",
+                borderColor: errors.message ? "red" : "inherit",
+                padding: "8px",
+                fontSize: "16px",
+                minHeight: "100px",
+                maxHeight: "500px",
+                overflowY: "auto",
+              }}
+            />
+            {errors.message && (
+              <Typography color="error" variant="body2" sx={{ mt: 1 }}>
+                {errors.message}
+              </Typography>
+            )}
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              className="submit-btn"
+              variant="contained"
+              color="primary"
+              type="submit"
+              fullWidth
+            >
+              Send Message
+            </Button>
+          </Grid>
+        </Grid>
       </Box>
     );
   }
