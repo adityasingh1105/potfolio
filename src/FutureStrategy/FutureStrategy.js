@@ -9,10 +9,10 @@ export default function FutureStrategy() {
     return (
       <ManageMainBox>
         <Box className="imgBox1">
-          <img src={Images.mobileImg1} />
+          <img src={Images.mobileImg1} alt="img" />
         </Box>
         <Box className="imgBox2">
-          <img src={Images.mobileImg2} />
+          <img src={Images.mobileImg2} alt="img" />
         </Box>
         <Box className="contentBox">
           <Typography className="headingTxt">
