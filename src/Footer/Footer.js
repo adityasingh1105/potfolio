@@ -15,8 +15,14 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Images } from "../ConstantData";
 import { textValue } from "../ConstantText";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const handleNavigate = (screenName) => {
+    console.log("AKash");
+    navigate(screenName);
+  };
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -53,7 +59,12 @@ const Footer = () => {
     return (
       <SecondBox>
         <Typography className="headerTxt">{textValue.company}</Typography>
-        <Typography className="linkTxt">{textValue.aboutUs}</Typography>
+        <Typography
+          className="linkTxt"
+          onClick={() => handleNavigate("/AboutUsBlock")}
+        >
+          {textValue.aboutUs}
+        </Typography>
         <Typography className="linkTxt">{textValue.ourTeam}</Typography>
         <Typography className="linkTxt">{textValue.helpFaqs}</Typography>
         <Typography className="linkTxt">{textValue.newsInsights}</Typography>
